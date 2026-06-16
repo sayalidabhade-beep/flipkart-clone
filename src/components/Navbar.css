@@ -1,0 +1,19 @@
+.navbar{
+  background:#2874f0;
+  color:white;
+  padding:15px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.navbar input{
+  width:400px;
+  padding:8px;
+}
+
+.navbar a{
+  color:white;
+  text-decoration:none;
+  margin-left:15px;
+}
