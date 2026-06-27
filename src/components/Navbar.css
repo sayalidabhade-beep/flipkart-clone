@@ -1,19 +1,122 @@
-.navbar{
-  background:#2874f0;
-  color:white;
-  padding:15px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
+.navbar {
+  display: flex;
+  align-items: center;
+  padding: 15px 25px;
+  background: white;
+  border-bottom: 1px solid #ddd;
 }
 
-.navbar input{
-  width:400px;
-  padding:8px;
+.logo img {
+  width: 150px;
 }
 
-.navbar a{
-  color:white;
-  text-decoration:none;
-  margin-left:15px;
+.travel {
+  margin-left: 20px;
+  padding: 10px 20px;
+  background: #f5f5f5;
+  border-radius: 8px;
+}
+
+.search {
+  flex: 1;
+  margin: 0 30px;
+}
+
+.search input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  gap: 40px; /* Space between Login, More and Cart */
+  position: relative;
+}
+
+.menu span {
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 6px;
+}
+
+.menu span:hover {
+  background: #2874f0;
+  color: white;
+}
+
+.dropdown {
+  position: absolute;
+  top: 45px;
+  right: 80px;
+  width: 250px;
+  background:black;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+  z-index: 1000;
+}
+
+.top-section {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+}
+
+.top-section a {
+  text-decoration: none;
+  color: #2874f0;
+  font-weight: bold;
+}
+
+.dropdown ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.dropdown li {
+  padding: 12px;
+  cursor: pointer;
+}
+
+.dropdown li:hover {
+  background:black;
+}
+.more-container {
+  position: relative;
+}
+
+.more-dropdown {
+  display: none;
+  position: absolute;
+  top: 40px;
+  right: 0;
+  width: 250px;
+  background:black;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  border-radius: 4px;
+  z-index: 1000;
+}
+
+.more-container:hover .more-dropdown {
+  display: block;
+}
+
+.more-dropdown ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.more-dropdown li {
+  padding: 12px 15px;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+}
+
+.more-dropdown li:hover {
+  background: #f5f5f5;
 }

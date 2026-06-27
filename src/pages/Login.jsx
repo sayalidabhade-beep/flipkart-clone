@@ -1,13 +1,18 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./Login.css";
 
 function Login() {
+
+  const navigate = useNavigate();
+
   const [formData, setFormData] = useState({
     email: "",
     password: "",
   });
 
   const [errors, setErrors] = useState({});
+
 
   const handleChange = (e) => {
     setFormData({
@@ -16,86 +21,169 @@ function Login() {
     });
   };
 
+
   const validate = () => {
     let newErrors = {};
 
     // Email Validation
     if (!formData.email) {
       newErrors.email = "Email is required";
-    } else if (
+    } 
+    else if (
       !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(formData.email)
     ) {
       newErrors.email = "Invalid email address";
     }
 
+
     // Password Validation
     if (!formData.password) {
       newErrors.password = "Password is required";
-    } else if (formData.password.length < 6) {
+    } 
+    else if (formData.password.length < 6) {
       newErrors.password = "Password must be at least 6 characters";
     }
 
     return newErrors;
   };
 
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
     const validationErrors = validate();
+
 
     if (Object.keys(validationErrors).length > 0) {
       setErrors(validationErrors);
       return;
     }
 
-    localStorage.setItem("user", JSON.stringify(formData));
 
-    alert("Login Successful!");
+    localStorage.setItem(
+      "user",
+      JSON.stringify(formData)
+    );
+
+
     setErrors({});
+
+    // Go to home page after login
+    navigate("/");
+
   };
 
+
   return (
+
     <div className="login-container">
+
       <div className="login-box">
+
+
         <div className="left-panel">
+
           <h2>Login</h2>
-          <p>Get access to your Orders, Wishlist and Recommendations</p>
+
+          <p>
+            Get access to your Orders,
+            Wishlist and Recommendations
+          </p>
+
         </div>
+
+
 
         <div className="right-panel">
+
+
           <form onSubmit={handleSubmit}>
+
+
             <input
-              type="text"
+
+              type="email"
+
               name="email"
+
               placeholder="Enter Email"
+
               value={formData.email}
+
               onChange={handleChange}
+
             />
+
+
             {errors.email && (
-              <span className="error">{errors.email}</span>
+              <span className="error">
+                {errors.email}
+              </span>
             )}
+
+
+
 
             <input
+
               type="password"
+
               name="password"
+
               placeholder="Enter Password"
+
               value={formData.password}
+
               onChange={handleChange}
+
             />
+
+
             {errors.password && (
-              <span className="error">{errors.password}</span>
+              <span className="error">
+                {errors.password}
+              </span>
             )}
 
-            <button type="submit">Login</button>
+
+
+
+            <button type="submit">
+              Login
+            </button>
+
+
           </form>
 
+
+
           <p className="signup-link">
-            New to Flipkart? <span>Create an account</span>
+
+            New to Flipkart?
+
+            <span 
+              onClick={() => navigate("/register")}
+            >
+
+              Create an account
+
+            </span>
+
           </p>
+
+
+
         </div>
+
+
       </div>
+
+
     </div>
+
   );
+
 }
+
 
 export default Login;

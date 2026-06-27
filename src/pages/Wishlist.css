@@ -1,0 +1,56 @@
+.wishlist-container {
+
+  display:flex;
+  justify-content:center;
+  padding:30px;
+
+}
+
+
+.wishlist-box {
+
+  width:500px;
+
+}
+
+
+
+.wishlist-card {
+
+  border:1px solid #ddd;
+  padding:15px;
+  margin:15px 0;
+  border-radius:10px;
+
+}
+
+
+
+.wishlist-card img {
+
+  object-fit:contain;
+
+}
+
+
+
+button {
+
+  padding:10px;
+  margin:5px;
+  cursor:pointer;
+
+  background:#2874f0;
+  color:white;
+  border:none;
+  border-radius:5px;
+
+}
+
+
+
+.remove-btn {
+
+  background:red;
+
+}
